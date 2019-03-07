@@ -9,6 +9,8 @@ const
 	bodyParser = require('body-parser');
 // set var app to express() lib functions
 const app = express();
+
+
 // Mongodb database named dbRoute
 const dbRoute = 'mongodb://localhost/way-farer'
 // connects backend code with the database
@@ -40,4 +42,5 @@ app.use('/api/cityposts', citypostRoutes)
 
 app.use('/user', userRoutes)
 
+//  process.env.PORT || 3001 "in production use the production port, otherwise use 3001 (for development for backend)".
 app.listen(process.env.PORT || 3001, () => console.log('backEnd Server is up and running!!! Example app listening at http://localhost:3001/ :)'))
