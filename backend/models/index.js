@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// connects backend code with the database
 mongoose.connect('mongodb://localhost/way-farer',
   { useNewUrlParser: true })
 

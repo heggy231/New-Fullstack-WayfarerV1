@@ -1,12 +1,19 @@
 const 
+    mongoose = require("mongoose");
     express = require('express'),
     cors = require('cors'),
+    // this is our MongoDB database
     citypostRoutes = require('./routes/citypostsroute'),
     userRoutes = require('./routes/user'),
-    bodyParser = require('body-parser')
+    bodyParser = require('body-parser');
+const app = express();
+// Mongodb database named dbRoute
+const dbRoute = 'mongodb://localhost/way-farer'
+// connects backend code with the database
+mongoose.connect(dbRoute,
+  { useNewUrlParser: true })
 
 
-const app = express()
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
